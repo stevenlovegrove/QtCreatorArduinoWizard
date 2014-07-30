@@ -1,0 +1,11 @@
+ARDMK_DIR    = %ARDMK_DIR%
+ARDUINO_DIR  = %ARDUINO_DIR%
+
+TARGET       = %ProjectName%
+ARDUINO_LIBS = %ARDUINO_LIBS%
+
+BOARD_TAG    = %BOARD_TAG%
+ARDUINO_PORT = %ARDUINO_PORT%
+
+include $(ARDMK_DIR)/Arduino.mk
+

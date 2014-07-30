@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizard version="1" kind="project"
+        class="" firstpage="10"
+        id="A.Arduino" category="B.CustomProjects">
+    <icon>arduino.png</icon>
+    <description>Creates an Arduino project.</description>
+    <displayname>Arduino Project</displayname>;
+    <displaycategory>Custom Projects</displaycategory>
+    <files>
+        <file source="project.creator"  target="%ProjectName%.creator" openproject="true"/>
+        <file source="project.includes" target="%ProjectName%.includes"/>
+        <file source="project.config"   target="%ProjectName%.config"/>
+        <file source="project.files"    target="%ProjectName%.files"/>
+
+        <file source="main.h"      target="%ProjectName%.h"   openeditor="true"/>
+        <file source="main.cpp"    target="%ProjectName%.cpp" openeditor="true"/>
+        <file source="makefile"    target="makefile"/>
+    </files>
+    <!-- Create a 2nd wizard page with parameters -->
+    <fieldpagetitle>Project Parameters</fieldpagetitle>
+    <fields>
+        <field mandatory="true" name="ARDMK_DIR">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="~/.config/QtProject/qtcreator/templates/wizards/arduino/arduino-mk" />
+            <fielddescription>ArduinoMake Path:</fielddescription>
+        </field>
+        <field mandatory="true" name="ARDUINO_DIR">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="/Applications/Arduino.app/Contents/Resources/Java" />
+            <fielddescription>Arduino Path:</fielddescription>
+        </field>
+        <field mandatory="true" name="BOARD_TAG">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="mega" />
+            <fielddescription>Board:</fielddescription>
+        </field>
+        <field mandatory="false" name="ARDUINO_LIBS">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext=" " />
+            <fielddescription>Libraries:</fielddescription>
+        </field>
+        <field mandatory="false" name="ARDUINO_PORT">
+            <fieldcontrol class="QLineEdit" validator='^[^"]+$'
+                          defaulttext="/dev/ttyUSB0" />
+            <fielddescription>Serial port:</fielddescription>
+        </field>
+    </fields>
+</wizard>
